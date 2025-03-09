@@ -13,6 +13,40 @@ function getHasil(comp, player) {
   if (player == 'semut') return comp == 'orang' ? 'KALAH' : 'MENANG!';
 }
 
+const pGajah = document.getElementsByClassName('gajah')[0];
+const pOrang = document.getElementsByClassName('orang')[0];
+const pSemut = document.getElementsByClassName('semut')[0];
+pGajah.addEventListener('click', () => {
+  const pilihanComp = computerPilih();
+  const pilihanPlayer = pGajah.className;
+  const hasil = getHasil(pilihanComp, pilihanPlayer);
+
+  const imgComputer = document.querySelector('.img-komputer');
+  imgComputer.src = `img/${pilihanComp}.png`;
+  const pInfo = document.querySelector('.info');
+  pInfo.innerHTML = hasil;
+});
+pOrang.addEventListener('click', () => {
+  const pilihanComp = computerPilih();
+  const pilihanPlayer = pOrang.className;
+  const hasil = getHasil(pilihanComp, pilihanPlayer);
+
+  const imgComputer = document.querySelector('.img-komputer');
+  imgComputer.src = `img/${pilihanComp}.png`;
+  const pInfo = document.querySelector('.info');
+  pInfo.innerHTML = hasil;
+});
+pSemut.addEventListener('click', () => {
+  const pilihanComp = computerPilih();
+  const pilihanPlayer = pSemut.className;
+  const hasil = getHasil(pilihanComp, pilihanPlayer);
+
+  const imgComputer = document.querySelector('.img-komputer');
+  imgComputer.src = `img/${pilihanComp}.png`;
+  const pInfo = document.querySelector('.info');
+  pInfo.innerHTML = hasil;
+});
+
 // var tanya = true;
 // while( tanya ) {
 //     // menangkap pilihan player
